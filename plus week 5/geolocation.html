@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Geolocation</title>
+  </head>
+  <body>
+    <h1>Geolocation API</h1>
+    <button>Get Current location</button>
+    <script>
+      function showPosition(position) {
+        h1 = document.querySelector("h1");
+        h1.innerHTML = `your latitude is ${position.coords.latitude} and your longitude is ${position.coords.longitude}`;
+      }
+
+      function getCurrentPosition() {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+      //navigator.geolocation.getCurrentPosition(showPosition);
+
+      button = document.querySelector("button");
+      button.addEventListener("click", getCurrentPosition);
+
+      //http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}
+    </script>
+  </body>
+</html>
